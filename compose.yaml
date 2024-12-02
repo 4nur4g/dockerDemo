@@ -9,7 +9,7 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017/docker-demo
-    # A way to develop in docker, has both pros and cons.
+    # A way to develop in docker, has both pros and cons. Needs node modules installed locally.
     # It's not the Docker way to handle things.
     # volumes:
     #   - .:/app
