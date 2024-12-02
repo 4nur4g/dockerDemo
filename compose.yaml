@@ -9,8 +9,19 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017/docker-demo
-    volumes:
-      - .:/app
+    # A way to develop in docker, has both pros and cons.
+    # It's not the Docker way to handle things.
+    # volumes:
+    #   - .:/app
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
     command: yarn nodemon server
 
   mongo:
