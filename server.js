@@ -16,7 +16,7 @@ const Item = mongoose.model('Item', itemSchema);
 
 app.get('/', async (req, res) => {
     const items = await Item.find();
-    res.send(items);
+    res.send({data: items});
 });
 
 app.get('/add', async (req, res) => {

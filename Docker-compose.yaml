@@ -11,7 +11,7 @@ services:
       - MONGO_URI=mongodb://mongo:27017/docker-demo
     volumes:
       - .:/app
-    command: node server
+    command: yarn nodemon server
 
   mongo:
     image: mongodb/mongodb-community-server
