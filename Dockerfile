@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN yarn install
+RUN --mount=type=cache,target=/root/.cache/yarn yarn install
 
 # Copy the rest of the application files
 COPY . .
